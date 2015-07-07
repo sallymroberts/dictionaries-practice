@@ -8,14 +8,20 @@ for line in fhandle:
     word_list = line.split(' ')
    
     for word in word_list:
-        if word in word_count:
-            word_count[word] = word_count[word] + 1
-        else:
-            word_count[word] = 1  
+        word_count[word] = word_count.get(word, 0) + 1
+        
 
-for word in word_count:
-    count = word_count[word]
+
+
+
+#       if word in word_count:
+#            word_count[word] = word_count[word] + 1
+#        else:
+#            word_count[word] = 1  
+
+for word, count in word_count.items():
     print "%s %d" % (word, count) 
+
 
 
 
